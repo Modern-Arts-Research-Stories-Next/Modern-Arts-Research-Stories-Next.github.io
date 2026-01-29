@@ -1,0 +1,55 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container">
+      <button class="navbar-toggler d-lg-none border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="offcanvas offcanvas-start offcanvas-lg sidebar" tabindex="-1" id="nav">
+        <div class="offcanvas-header d-lg-none justify-content-end">
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body p-0">
+          <ul class="navbar-nav mx-lg-auto gap-3 gap-lg-4 flex-lg-row align-items-lg-center">
+            
+            <li class="nav-item">
+              <a class="nav-link fw-normal link-secondary d-flex align-items-center gap-2 px-3 py-1 {% if current_page == 'index' %}active{% endif %}" href="{{ base_url }}/index.html">
+                <i class="bi bi-house-door d-lg-none"></i><span>Home</span>
+              </a>
+            </li>
+
+            <!-- Our Creations -->
+            <li class="nav-item">
+              <a class="nav-link fw-normal link-secondary d-flex align-items-center gap-2 px-3 py-1 {% if current_page == 'creation' %}active{% endif %}" href="{{ base_url }}/creation.html">
+                <i class="bi bi-box-seam d-lg-none"></i><span>Our Creations</span>
+              </a>
+            </li>
+
+            <!-- Blog -->
+            <li class="nav-item">
+              <a class="nav-link fw-normal link-secondary d-flex align-items-center gap-2 px-3 py-1 {% if current_page == 'Blog' %}active{% endif %}" href="{{ base_url }}/blog.html">
+                <i class="bi bi-newspaper d-lg-none"></i><span>Blog</span>
+              </a>
+            </li>
+
+            <!-- Docs Hub -->
+            <li class="nav-item">
+              <a class="nav-link fw-normal link-secondary d-flex align-items-center gap-2 px-3 py-1 {% if current_page == 'docs-hub' %}active{% endif %}" href="{{ base_url }}/docs-hub.html">
+                <i class="bi bi-journal-text d-lg-none"></i><span>Docs Hub</span>
+              </a>
+            </li>
+
+            <!-- About Us -->
+            <li class="nav-item">
+              <a class="nav-link fw-normal link-secondary d-flex align-items-center gap-2 px-3 py-1 {% if current_page == 'about' %}active{% endif %}" href="{{ base_url }}/about.html">
+                <i class="bi bi-info-circle d-lg-none"></i><span>About Us</span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

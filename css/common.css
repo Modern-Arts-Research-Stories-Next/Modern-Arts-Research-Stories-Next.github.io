@@ -1,0 +1,89 @@
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.sidebar .nav-link,
+footer {
+  font-family: "Merriweather", serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.sidebar .nav-link.active {
+  color: rgba(var(--bs-success-rgb), var(--bs-link-opacity, 1)) !important;
+}
+
+main {
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 992px) {
+  .sidebar .nav-link:not(.active):hover {
+    color: rgba(var(--bs-danger-rgb), var(--bs-link-opacity, 1)) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .sidebar {
+    width: 220px !important;
+  }
+
+  .sidebar .nav-link,
+  footer {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  main {
+    margin-bottom: 4rem;
+  }
+}
+
+@media (min-width: 576px) {
+  body {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .sidebar {
+    width: 180px !important;
+  }
+
+  .sidebar .nav-link,
+  footer {
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+
+  main {
+    margin-bottom: 5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  body {
+    font-size: 0.9rem;
+    line-height: 1.25;
+  }
+
+  .sidebar {
+    width: 140px !important; 
+  }
+
+  .sidebar .nav-link,
+  footer {
+    font-size: 0.8rem;
+    line-height: 1.1;
+  }
+
+  main {
+    margin-bottom: 4rem;
+  }
+}
