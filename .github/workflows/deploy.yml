@@ -1,0 +1,58 @@
+name: Deploy Site
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install Minify
+        run: |
+          curl -L -o minify.tar.gz https://github.com/tdewolff/minify/releases/download/v2.24.8/minify_linux_amd64.tar.gz
+          tar -xzf minify.tar.gz
+          rm minify.tar.gz
+          chmod +x minify
+          mv minify /usr/local/bin/
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: 3.14
+          pip-version: 25.3
+          pip-install: -r ${{ github.workspace }}/requirements.txt
+
+      - name: Build Site
+        run: |
+          python ${{ github.workspace }}/scripts/main.py --deploy
+          minify --recursive --inplace ${{ github.workspace }}/Site
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ github.workspace }}/Site
+
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
