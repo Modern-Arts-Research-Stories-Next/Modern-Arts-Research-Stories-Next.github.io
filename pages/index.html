@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title -%}Home{%- endblock %}</title>
+
+    <!-- Bootstrap CSS (CDN, keep unchanged) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Local CSS using base_url -->
+    <link href="{{ base_url }}/css/common.css" rel="stylesheet">
+    <link href="{{ base_url }}/css/index.css" rel="stylesheet">
+
+    <!-- Google Fonts (CDN, keep unchanged) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap" rel="stylesheet">
+    
+    {% block fonts -%}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    {%- endblock %}
+</head>
+<body class="d-flex flex-column min-vh-100 fw-medium text-body">
+
+{%- set current_page = 'index' %}
+{% include 'header.html' %}
+
+<main class="flex-grow-1">
+    <div class="container mt-4 mt-md-5">
+        <h1 class="heading fw-semibold text-center mb-4">What We Offer</h1>
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+
+            <!-- Card 1: Applications -->
+            <div class="col">
+                <div class="card border-primary-subtle border-3 shadow rounded h-100 bg-body">
+                    <div class="card-body p-4">
+                        <h5 class="card-title heading">Applications</h5>
+                        <p class="card-text mb-0">
+                            We create high-quality, reliable software solutions designed to solve real-world problems, increase efficiency, and help businesses achieve their goals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Libraries / Addons -->
+            <div class="col">
+                <div class="card border-success-subtle border-3 shadow rounded h-100 bg-body">
+                    <div class="card-body p-4">
+                        <h5 class="card-title heading">Libraries</h5>
+                        <p class="card-text mb-0">
+                            Our reusable libraries and addons help developers accelerate projects, reduce errors, and provide scalable solutions for software and games.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Games -->
+            <div class="col">
+                <div class="card border-warning-subtle border-3 shadow rounded h-100 bg-body">
+                    <div class="card-body p-4">
+                        <h5 class="card-title heading">Games</h5>
+                        <p class="card-text mb-0">
+                            We design and develop engaging, polished games that entertain and inspire players across platforms, while maintaining high performance and stability.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Assets -->
+            <div class="col">
+                <div class="card border-purple-subtle border-3 shadow rounded h-100 bg-body">
+                    <div class="card-body p-4">
+                        <h5 class="card-title heading">Assets</h5>
+                        <p class="card-text mb-0">
+                            We produce high-quality art, sound, and 3D assets that empower game creators to build visually compelling, immersive, and professional games efficiently.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+{% include 'footer.html' %}
+
+<!-- Bootstrap JS Bundle (CDN, keep unchanged) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

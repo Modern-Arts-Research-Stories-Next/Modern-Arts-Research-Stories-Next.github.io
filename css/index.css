@@ -1,0 +1,13 @@
+.heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+h1{
+  color: rgba(var(--bs-primary-rgb), 0.6) !important; 
+}
+
+.border-purple-subtle {
+    border-color: #c5b3ff !important;
+}
