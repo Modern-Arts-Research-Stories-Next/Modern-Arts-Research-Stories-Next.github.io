@@ -1,0 +1,86 @@
+.heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.info {
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  animation: fadeIn 3s ease-in-out infinite;
+}
+
+.go-back-btn {
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 1rem 1.75rem;
+  color: #fff !important;
+  background: linear-gradient(135deg, #6db7c2, #3393b0);
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease, transform 0.3s ease;
+}
+
+.go-back-btn:hover {
+  background: linear-gradient(135deg, #3393b0, #6db7c2);
+  transform: scale(1.2);
+}
+
+.go-back-btn:active {
+  transform: scale(0.55);
+}
+
+@keyframes rise {
+  0%   { transform: translateY(0) scale(1); opacity: 0.7; }
+  50%  { transform: translateY(-150px) scale(1.5); opacity: 1; }
+  100% { transform: translateY(-300px) scale(2); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.bubble {
+  border-radius: 50%;
+  opacity: 1;
+  animation: rise 10s ease-in-out infinite;
+  bottom: -50px;
+  width: 30px;
+  height: 30px;
+}
+
+.bubble.g1 { background: linear-gradient(135deg, #ffafbd, #ffc3a0); }
+.bubble.g2 { background: linear-gradient(135deg, #a1c4fd, #c2e9fb); }
+.bubble.g3 { background: linear-gradient(135deg, #cfd9df, #e2ebf0); }
+.bubble.g4 { background: linear-gradient(135deg, #f6d365, #fda085); }
+.bubble.g5 { background: linear-gradient(135deg, #e3e9ec, #a3b5c7); }
+.bubble.g6 { background: linear-gradient(135deg, hsl(4, 100%, 69%), #f7b42c); }
+.bubble.g7 { background: linear-gradient(135deg, #78ffd6, #a8ff78); }
+.bubble.g8 { background: linear-gradient(135deg, #ee9ca7, #ffdde1); }
+.bubble.g9 { background: linear-gradient(135deg, #fbc2eb, #a6c1ee); }
+
+.bubble.left  { left: 10%; }
+.bubble.right { right: 10%; }
+
+.bubble.d0 { animation-delay: 0s; }
+.bubble.d4 { animation-delay: 4s; }
+
+@media (min-width: 768px) {
+  .info { font-size: 1.25rem; line-height: 1.5; }
+  .go-back-btn { font-size: 1.25rem; padding: 0.9375rem 1.5625rem; }
+  .bubble { width: 45px; height: 45px; bottom: -100px; }
+}
+
+@media (min-width: 576px) {
+  .info { font-size: 1.1rem; line-height: 1.4;}
+  .go-back-btn { font-size: 1.125rem; padding: 0.875rem 1.5rem; }
+  .bubble { width: 15px; height: 15px; bottom: -80px; }
+}
+
+@media (max-width: 575px) {
+  .info { font-size: 0.9rem; line-height: 1.25;}
+  .go-back-btn { font-size: 1rem; padding: 0.75rem 1.25rem; }
+  .bubble { width: 30px; height: 30px; bottom: -50px; }
+}
